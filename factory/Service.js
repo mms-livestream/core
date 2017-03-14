@@ -32,7 +32,7 @@ class Service extends Interaction {
         return new Promise((resolve, reject) => {
             let config = dConfig[this.node].service;    //TODO etcd, here hardcoded
 
-            this.service
+            this.framework
                 .listen(config);
             console.log("API Seneca Listening");
             resolve();
