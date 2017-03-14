@@ -14,11 +14,11 @@ class Server extends Interaction {
     constructor(node, api, options) {
         super(node, express(), api);
 
-        this.framework.use('/api', this.api(options));  //options to pass to express router
-
-        // Additional
+        // Setting up parser
         this.framework.use(bodyParser.urlencoded({ extended: false }));   //parse application/x-www-form-urlencoded
         this.framework.use(bodyParser.json());  //parse application/json
+
+        this.framework.use('/api', this.api(options));  //options to pass to express router
     }
 
     listen() {
