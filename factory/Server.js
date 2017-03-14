@@ -14,7 +14,7 @@ class Server extends Interaction {
     constructor(node, api, options) {
         super(node, express(), api);
 
-        this.framework.use('/api', this.framework.api(options));  //options to pass to express router
+        this.framework.use('/api', this.api(options));  //options to pass to express router
 
         // Additional
         this.framework.use(bodyParser.urlencoded({ extended: false }));   //parse application/x-www-form-urlencoded
