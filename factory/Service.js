@@ -7,7 +7,7 @@ let Promise = require('bluebird');  //jshint ignore:line
 let seneca = require('seneca');
 
 let dConfig = require('../dConfig.js');
-let Interaction = require('Interaction.js');
+let Interaction = require('./Interaction.js');
 
 class Service extends Interaction {
     constructor(node, api, options) {

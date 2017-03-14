@@ -8,7 +8,7 @@ let express = require('express');
 let bodyParser = require('body-parser');
 
 let dConfig = require('../dConfig.js');
-let Interaction = require('Interaction.js');
+let Interaction = require('./Interaction.js');
 
 class Server extends Interaction {
     constructor(node, api, options) {
