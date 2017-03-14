@@ -21,8 +21,8 @@ class Service extends Interaction {
         return new Promise((resolve, reject) => {
             //Discover IPs related to this node : [{"host": string, "port": int }]
             let schema = dConfig.SERVICE_SCHEMA[this.node];          //TODO etcd, here hardcoded
-            for(let socket of schema.service) {
-                this.client(socket);    //client discovers node
+            for(let socket of schema) {
+                this.framework.client(socket.service.port, socket.service.host);    //client discovers node     //TODO verify for several
             }
             resolve();
         });
@@ -32,9 +32,9 @@ class Service extends Interaction {
         return new Promise((resolve, reject) => {
             let config = dConfig[this.node].service;    //TODO etcd, here hardcoded
 
-            this.framework
+            this.service
                 .listen(config);
-            console.log(`API Seneca Listening on ${config.port}`);
+            console.log("API Seneca Listening");
             resolve();
         });
     }
