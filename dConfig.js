@@ -3,7 +3,7 @@
 'use strict';
 
 let db = {
-    NODE_SESSION_MANAGER: {"service": {"host": "localhost", "port": 5000}, "server": {"host": "localhost", "port": 8080}},
+    NODE_SESSION_MANAGER: {"service": {"host": "localhost", "port": 5000}, "server": {"host": "localhost", "port": 8080}, "app":  {"host": "localhost", "port": 2000}},
     NODE_METADATA_MANAGER: {"service": {"host": "localhost", "port": 5001}, "server": {"host": "localhost", "port": 8081}},
     NODE_DB_CONTROLLER: {"service": {"host": "localhost", "port": 5002}, "server": {"host": "localhost", "port": 8082}},
     NODE_INTELLIGENCE: {"service": {"host": "localhost", "port": 5003}, "server": {"host": "localhost", "port": 8083}},
