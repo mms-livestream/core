@@ -14,6 +14,7 @@ let db = {
     NODE_TRANSCODER3: {"service": {"host": "localhost", "port": 0}, "server": {"host": "localhost", "port": 7002}},
     NODE_REPLICATOR: {"service": {"host": "localhost", "port": 5006}, "server": {"host": "localhost", "port": 8086}},
     NODE_DISTRIB: {"service": {"host": "localhost", "port": 5007}, "server": {"host": "localhost", "port": 8087}},
+    NODE_GATEWAY: {"service": {"host": "localhost", "port": 5008}, "server": {"host": "localhost", "port": 8088}},
 };
 
 db.SERVICE_SCHEMA = {
