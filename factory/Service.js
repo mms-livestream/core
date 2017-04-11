@@ -14,7 +14,7 @@ class Service extends Interaction {
         super(node, seneca(), api);
         this.client = this.framework.client();  //seneca client to act upon other service nodes
 
-        if (options.prepare) {
+        if (options && options.prepare) {
             this.prepare();
             options.service = this;
         }
