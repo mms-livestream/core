@@ -18,7 +18,7 @@ let db = {
 };
 
 db.SERVICE_SCHEMA = {
-    "NODE_SESSION_MANAGER": [db.NODE_DB_CONTROLLER],//, db.NODE_MPD_GENERATOR], //TODO solve multi schema seneca client problem
+    "NODE_SESSION_MANAGER": [db.NODE_MPD_GENERATOR],//, db.NODE_MPD_GENERATOR], //TODO solve multi schema seneca client problem
     "NODE_METADATA_MANAGER": [db.NODE_DB_CONTROLLER],
     "NODE_DATABASE_CONTROLLER": [],
     "NODE_INTELLIGENCE": [db.NODE_DB_CONTROLLER, db.NODE_SESSION_MANAGER, db.NODE_TRANSCODER],
