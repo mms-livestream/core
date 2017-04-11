@@ -12,9 +12,14 @@ let Interaction = require('./Interaction.js');
 class Service extends Interaction {
     constructor(node, api, options) {
         super(node, seneca(), api);
+        this.client = this.framework.client();  //seneca client to act upon other service nodes
+
+        if (options.prepare) {
+            this.prepare();
+            options.service = this;
+        }
 
         this.framework.use(this.api, options);  //options to pass to seneca plugin
-        this.client = this.framework.client();  //seneca client to act upon other service nodes
     }
 
     prepare() {
