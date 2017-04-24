@@ -12,7 +12,12 @@ let Interaction = require('./Interaction.js');
 class Service extends Interaction {
     constructor(node, api, options) {
         super(node, seneca(), api);
+
+        //TEMP
         this.client = this.framework.client();  //seneca client to act upon other service nodes
+
+        //NEW
+        this.cli = {};
 
         if (options && options.prepare) {
             this.prepare();
@@ -26,9 +31,17 @@ class Service extends Interaction {
         return new Promise((resolve, reject) => {
             //Discover IPs related to this node : [{"host": string, "port": int }]
             let schema = dConfig.SERVICE_SCHEMA[this.node];          //TODO etcd, here hardcoded
+
+            //TEMP
             for(let socket of schema) {
                 this.framework.client(socket.service.port, socket.service.host);    //client discovers node     //TODO verify for several
             }
+
+            //NEW
+            for (let socket of schema) {
+                this.framework.cli[socket.name] = this.framework.client(socket.service.port, socket.service.host);
+            }
+
             resolve();
         });
     }
