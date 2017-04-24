@@ -39,7 +39,7 @@ class Service extends Interaction {
 
             //NEW
             for (let socket of schema) {
-                this.framework.cli[socket.name] = this.framework.client(socket.service.port, socket.service.host);
+                this.cli[socket.name] = this.framework.client(socket.service.port, socket.service.host);
             }
 
             resolve();
