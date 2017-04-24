@@ -1,6 +1,6 @@
 {
   "name": "mms-core",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "description": "MMS Core : Microservice centralized features cf. interface functions factory",
   "main": "index.js",
   "dependencies": {
