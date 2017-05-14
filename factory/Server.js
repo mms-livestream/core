@@ -6,6 +6,7 @@ let Promise = require('bluebird');  //jshint ignore:line
 
 let express = require('express');
 let bodyParser = require('body-parser');
+let cors = require('cors');
 
 let dConfig = require('../dConfig.js');
 let Interaction = require('./Interaction.js');
@@ -17,6 +18,7 @@ class Server extends Interaction {
         // Setting up parser
         this.framework.use(bodyParser.urlencoded({ extended: false }));   //parse application/x-www-form-urlencoded
         this.framework.use(bodyParser.json());  //parse application/json
+	this.framework.use(cors());	
 
         this.framework.use('/api', this.api(options));  //options to pass to express router
     }
